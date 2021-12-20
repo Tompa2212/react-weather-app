@@ -43,7 +43,7 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("london");
   const [recentSearches, setRecentSearches] = useState(getLocalStorage());
   const [weather, setWeather] = useState({});
   const [defUnit, setDefUnit] = useState("C");
@@ -77,9 +77,7 @@ const AppProvider = ({ children }) => {
         setWeather(response_data);
 
         //3(slice) last(reverse) unique(new Set) recent searches
-        const temp = [...new Set([...recentSearches, query])]
-          .reverse()
-          .slice(0, 3);
+        const temp = [...new Set([...recentSearches, query])].reverse().slice(0, 3);
 
         setRecentSearches(temp);
       } catch (err) {
@@ -134,7 +132,7 @@ const AppProvider = ({ children }) => {
   //fetch weather info every time user changes city name
   useEffect(() => {
     fetchData(`${url_city}${query}`);
-  }, [query, fetchData]);
+  }, [query]);
 
   useEffect(() => {
     localStorage.setItem("recent", JSON.stringify(recentSearches));

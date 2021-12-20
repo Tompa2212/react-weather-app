@@ -4,8 +4,8 @@ import Moment from "react-moment";
 import { BiCurrentLocation } from "react-icons/bi";
 import { IoLocationSharp } from "react-icons/io5";
 
-import { useGlobalContext } from "./context";
-import SearchForm from "./components/SearchForm";
+import { useGlobalContext } from "../context";
+import SearchForm from "../components/SearchForm";
 
 const Today = () => {
   const {

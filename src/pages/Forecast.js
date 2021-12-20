@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Day from "./components/Day";
-import Hightlight from "./components/Hightlight";
-import { useGlobalContext } from "./context";
+import Day from "../components/Day";
+import Hightlight from "../components/Hightlight";
+import { useGlobalContext } from "../context";
 
 const Forecast = () => {
   const { weather, loading, setDefUnit, convertTempUnit } = useGlobalContext();

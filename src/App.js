@@ -1,5 +1,5 @@
-import Today from "./Today";
-import Forecast from "./Forecast";
+import Today from "./pages/Today";
+import Forecast from "./pages/Forecast";
 
 function App() {
   return (
